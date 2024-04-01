@@ -277,9 +277,9 @@ static int ec_write(int argc, char **argv)
     return EC_OK;
 }
 
-static int ec_test_tra_repair(int argc, char **argv)
+static int OR_tra_repair(int argc, char **argv)
 {
-    printf("[ec_test_tra_repair begin]\n");
+    printf("[OR_tra_repair begin]\n");
     int i; // loop control variables
 
     /* File arguments */
@@ -305,26 +305,26 @@ static int ec_test_tra_repair(int argc, char **argv)
     for (i = 0; i < EC_K + 1; i++)
         shutdown(sockfd_array[i], SHUT_RDWR);
 
-    printf("[ec_test_tra_repair end]\n");
+    printf("[OR_tra_repair end]\n");
     return EC_OK;
 }
-static int ec_test_piv_repair(int argc, char **argv)
+static int OR_piv_repair(int argc, char **argv)
 {
-    printf("[ec_test_piv_repair begin]\n");
+    printf("[OR_piv_repair begin]\n");
 
-    printf("[ec_test_piv_repair end]\n");
+    printf("[OR_piv_repair end]\n");
     return EC_OK;
 }
-static int ec_test_ppt_repair(int argc, char **argv)
+static int OR_ppt_repair(int argc, char **argv)
 {
-    printf("[ec_test_ppt_repair begin]\n");
+    printf("[OR_ppt_repair begin]\n");
 
-    printf("[ec_test_ppt_repair end]\n");
+    printf("[OR_ppt_repair end]\n");
     return EC_OK;
 }
-static int ec_test_rp_repair(int argc, char **argv)
+static int OR_rp_repair(int argc, char **argv)
 {
-    printf("[ec_test_rp_repair begin]\n");
+    printf("[OR_rp_repair begin]\n");
 
     int i; // loop control variables
 
@@ -347,14 +347,14 @@ static int ec_test_rp_repair(int argc, char **argv)
     free(nodes_bandwidth_temp);
     free(nodes_bandwidth);
 
-    printf("[ec_test_ppt_repair end]\n");
+    printf("[OR_ppt_repair end]\n");
     return EC_OK;
 }
-static int ec_test_new_repair(int argc, char **argv)
+static int OR_new_repair(int argc, char **argv)
 {
-    printf("[ec_test_new_repair begin]\n");
+    printf("[OR_new_repair begin]\n");
 
-    printf("[ec_test_new_repair end]\n");
+    printf("[OR_new_repair end]\n");
     return EC_OK;
 }
 
@@ -367,11 +367,11 @@ static void help(int argc, char **argv)
                     "\t -kw <src_filename> <dst_filename> \n"
                     "\t  \n"
                     "\t Example1: -w src_10MB.mp4 dst_10MB.mp4 \n"
-                    "\t <src_filename> saved on ec_test/test_file/write/ for client\n"
-                    "\t <dst_filename> saved on ec_test/test_file/write/ for storages \n"
+                    "\t <src_filename> saved on OptimalRepair/test_file/write/ for client\n"
+                    "\t <dst_filename> saved on OptimalRepair/test_file/write/ for storages \n"
                     "\t Example2: -r read_10MB.mp4 dst_10MB.mp4  \n"
-                    "\t <src_filename> saved on ec_test/test_file/read/ for storages\n"
-                    "\t <dst_filename> saved on ec_test/test_file/write/ for client \n"
+                    "\t <src_filename> saved on OptimalRepair/test_file/read/ for storages\n"
+                    "\t <dst_filename> saved on OptimalRepair/test_file/write/ for client \n"
                     "\t Tip: saved filename on storages actually is dst_filenameX_Y, \n"
                     "\t the X is Xth stripe and the Y is Yth chunk.\n"
                     "\t  \n",
@@ -413,28 +413,28 @@ int main(int argc, char *argv[]) // cur_dir is script
     }
     else if (0 == strncmp(cmd, "-trtra", strlen("-trtra"))) // cmd -trtra: erasure coding repair test: traditional
     {
-        if (ec_test_tra_repair(argc, argv) == EC_ERROR)
-            printf("Fail ec_test_tra_repair\n");
+        if (OR_tra_repair(argc, argv) == EC_ERROR)
+            printf("Fail OR_tra_repair\n");
     }
     else if (0 == strncmp(cmd, "-trpiv", strlen("-trpiv"))) // cmd -trpiv: erasure coding repair test: pivot
     {
-        if (ec_test_tra_repair(argc, argv) == EC_ERROR)
-            printf("Fail ec_test_tra_repair\n");
+        if (OR_tra_repair(argc, argv) == EC_ERROR)
+            printf("Fail OR_tra_repair\n");
     }
     else if (0 == strncmp(cmd, "-trppt", strlen("-trppt"))) // cmd -trppt: erasure coding repair test: ppt
     {
-        if (ec_test_tra_repair(argc, argv) == EC_ERROR)
-            printf("Fail ec_test_tra_repair\n");
+        if (OR_tra_repair(argc, argv) == EC_ERROR)
+            printf("Fail OR_tra_repair\n");
     }
     else if (0 == strncmp(cmd, "-trrp", strlen("-trrp"))) // cmd -trrp: eerasure coding repair test: repair pipeline
     {
-        if (ec_test_tra_repair(argc, argv) == EC_ERROR)
-            printf("Fail ec_test_tra_repair\n");
+        if (OR_tra_repair(argc, argv) == EC_ERROR)
+            printf("Fail OR_tra_repair\n");
     }
     else if (0 == strncmp(cmd, "-trnew", strlen("-trnew"))) // cmd -trnew: erasure coding repair test: new method
     {
-        if (ec_test_tra_repair(argc, argv) == EC_ERROR)
-            printf("Fail ec_test_tra_repair\n");
+        if (OR_tra_repair(argc, argv) == EC_ERROR)
+            printf("Fail OR_tra_repair\n");
     }
     else
     {

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(ec_test)
+project(OptimalRepair)
 
 # Add header file directory to the search path
 include_directories(include)

@@ -28,7 +28,7 @@ dd if=/dev/urandom iflag=fullblock of=file.txt bs=64M count=3
 测试命令
 
 #1. 准备测试运行环境：创建环境和删除环境（仅首次搭建使用，后续无需运行）
-cd /home/ych/OptimalRepair && cmake . && make  && cd script && chmod a+x *
+cd /home/ych/OptimalRepair && cd script && chmod a+x *
 ./create_env_storagenodes.sh 101 106
 ./delete_env_storagenodes.sh 101 106
 
@@ -41,20 +41,20 @@ cd /home/ych/OptimalRepair && cd script && chmod a+x * && ./make.sh
 ./start_client.sh -trtra 2MB_repair 2MB_dst	//2MB_repair是新节点或故障节点修复得到的文件，2MB_dst是存储在分布式存储的文件名
 
 #可选1.make.sh实际执行
-cmake . && make  && cd script && ./kill_all_storagenodes.sh 102 105 && ./scp_storagenodes.sh 102 105 && ./start_all_storagenodes.sh 102 105
+cmake . && make  && cd script && ./kill_all_storagenodes.sh 102 106 && ./scp_storagenodes.sh 102 106 && ./start_all_storagenodes.sh 102 106
 
 #可选2.单点故障
 ./kill_ip_storagenodes.sh 103
 
 
 #可选3.网络带宽限制
-./limit_network.sh 102 105 ens5 100000     	//ens5需要查看网卡名确定100Mbps
-./unlimit_network.sh 102 105 ens5 
+./limit_network.sh 102 106 ens5 100000     	//ens5需要查看网卡名确定100Mbps
+./unlimit_network.sh 102 106 ens5 
 
 #可选4.网络带宽测试
-./start_close_iperf3_server.sh 102 105 1
-./start_close_iperf3_server.sh 102 105 0  关闭服务器
- ./start_iperf3_test.sh 102 105 1 
+./start_close_iperf3_server.sh 102 106 1
+./start_close_iperf3_server.sh 102 106 0  关闭服务器
+ ./start_iperf3_test.sh 102 106 1 
 
 ----------------------------------------------------------------------
 调试命令
