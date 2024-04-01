@@ -20,7 +20,7 @@ iperf3 -s			//在服务器节点192.168.7.102运行
 iperf3 -c 192.168.7.102		//在非服务器节点运行
 
 #可选2：通过切分文件准备测试文件
-cd /home/ych/ych_ec_test/test_file/write && gcc -o cut_file_test cut_file_test.c && ./cut_file_test 1.58GB.mp4
+cd /home/ych/OptimalRepair/test_file/write && gcc -o cut_file_test cut_file_test.c && ./cut_file_test 1.58GB.mp4
 #可选3：直接生成，无需准备测试文件64*3MB的文件生成
 dd if=/dev/urandom iflag=fullblock of=file.txt bs=64M count=3 
 
@@ -28,12 +28,12 @@ dd if=/dev/urandom iflag=fullblock of=file.txt bs=64M count=3
 测试命令
 
 #1. 准备测试运行环境：创建环境和删除环境（仅首次搭建使用，后续无需运行）
-cd /home/ych/ec_test && cmake . && make  && cd script && chmod a+x *
-./create_env_storagenodes.sh 102 105
-./delete_env_storagenodes.sh 102 105
+cd /home/ych/OptimalRepair && cmake . && make  && cd script && chmod a+x *
+./create_env_storagenodes.sh 101 106
+./delete_env_storagenodes.sh 101 106
 
 #2. 编译命令 + 发送可执行文件 + 运行可执行文件
-cd /home/ych/ec_test && cd script && chmod a+x * && ./make.sh
+cd /home/ych/OptimalRepair && cd script && chmod a+x * && ./make.sh
 
 #3. 测试命令
 ./start_client.sh -w 2MB_src 2MB_dst 		//2MB_src是client本地保存文件，2MB_dst是存储在分布式存储的文件名
@@ -90,7 +90,7 @@ git config --global user.email "你的邮箱地址"
 ssh-keygen -t rsa -C "自己的邮箱地址"
 4. 在~目录下生成文件夹.ssh，其中包含私钥和公钥（_pub结尾）。将pub文件内容粘贴至gitee的ssh设置中
 比如C:\Users\22806\.ssh
-5. git clone https://gitee.com/ychyhx/ec_test.git
+5. git clone https://gitee.com/ychyhx/OptimalRepair.git
 
 # 2. git每次使用
 git pull	//每次使用前拉去远端看看是否更改

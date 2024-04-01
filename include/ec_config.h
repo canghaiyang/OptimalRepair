@@ -5,8 +5,8 @@
 #define LOG 0
 
 #define EC_K 2                   // k of k+m EC
-#define EC_M 2                   // m of k+m EC, larger than 1
-#define EC_N 4                   // n of k+m EC
+#define EC_M 3                   // m of k+m EC, larger than 1
+#define EC_N 5                   // n of k+m EC
 #define EC_W 8                   // finite field 2^w
 #define CHUNK_SIZE (1 * 1048576) // unit Byte
 #define EC_X 3                   // x number of encoded nodes
