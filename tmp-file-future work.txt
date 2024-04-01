@@ -1,0 +1,62 @@
+1. 多线程编码
+2. 避免头文件多次定义
+	#ifndef DFS_SYS_H
+	#define DFS_SYS_H
+
+	#endif
+3. 定义type.h
+
+4. 线性规划计算存在一定的bug，如原本能在范围取值但不行。
+ci:  [3, 3, 2, 2, 2]
+clocation: 
+[1, 1, 1, 1, 0]
+[1, 1, 1, 0, 1]
+[1, 1, 0, 1, 1]
+single_repair_init_up: [10.0, 10.0, 10.0, 20.0]
+init avarage up = 16.0  Bmax_up = 15.0  Tmax_up = 45.0
+single_repair_final_up: [10.0, 10.0, 10.0, 15.0]
+single_repair_data: [2.0, 2.0, 2.0, 3.0]
+********************************** 57
+single_repair_init_up: [10.0, 10.0, 10.0, 20.0]
+init avarage up = 16.0  Bmax_up = 15.0  Tmax_up = 45.0
+single_repair_final_up: [10.0, 10.0, 10.0, 15.0]
+single_repair_data: [2.0, 2.0, 2.0, 3.0]
+********************************** 58
+single_repair_init_up: [10.0, 10.0, 20.0, 20.0]
+init avarage up = 20.0  Bmax_up = 20.0  Tmax_up = 60.0
+single_repair_final_up: [10.0, 10.0, 20.0, 20.0]
+single_repair_data: [1.5, 1.5, 3.0, 3.0]
+********************************** 59
+0 ts: 0.0667   1 ts: 0.0667   2 ts: 0.0500   2 ts_sum: 0.1833
+
+s_fr_data: [5.5 5.5 4.  6.  6. ]
+old_up:  [10.0, 10.0, 10.0, 20.0, 20.0]  old sum_up = 70.0  new_up:  [10.0, 10.0, 10.0, 12.0, 12.0]  new sum_up = 54.0
+updata: [ 1.6667 1.6667 1.6667 2.0000 2.0000 ]   sum_data: 9.0000
+up_fr: [10.0, 10.0, 10.0, 12.0, 12.0]
+******************** Have optimal solution
+result: 
+ [[ 0.667  0.333  1.     1.     0.   ]
+ [ 1.     0.333  0.667  0.     1.   ]
+ [-0.     1.     0.     1.     1.   ]]
+result_check_col:  [1.6667 1.6667 1.6667 2.     2.    ]
+col_sums:  [1.6667 1.6667 1.6667 2.     2.    ]
+result_check_row:  [3. 3. 3.]
+row_sums:  [3. 3. 3.]
+sum_col =  True        sum_row =  True
+init rp_time = 0.1833, final rp_time = 0.1667, decrease ratio = 9.09%, mul_lp = 0, test_times=19 
+
+
+
+datanode数据接受：先接受header，再通过recv_main_thread接受数据线程
+1. 构建线程结构体：
+2. 任务结构体：分配执行任务，然后网络传输
+
+
+datanode数据接受：先接受header，再通过recv_main_thread接受数据线程
+
+构建网络fd保存的结构体来统一管理网络
+
+protobuf：提供序列化和反序列化：如C++中SerializeToString和ParseFromString
+
+
+小技巧取上整：final int numStripes = (int) ((dataSize - 1) / stripeSize + 1);

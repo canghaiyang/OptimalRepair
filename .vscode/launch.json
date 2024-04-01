@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "/home/ych/ec_test/script",
+      "program": "/home/ych/ec_test/build/client",
+      "args": ["-r", "2MB_src", "2MB_dst"],
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "Build"
+    }
+  ]
+}

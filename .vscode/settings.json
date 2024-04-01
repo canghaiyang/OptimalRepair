@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "*.java": "java",
+        "repair.h": "c",
+        "ec_config.h": "c",
+        "share_func.h": "c",
+        "array": "c",
+        "string": "c",
+        "set": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "initializer_list": "cpp"
+    }
+}
