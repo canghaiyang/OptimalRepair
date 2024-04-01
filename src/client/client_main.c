@@ -279,7 +279,7 @@ static int ec_write(int argc, char **argv)
 
 static int ec_tra_repair(int argc, char **argv)
 {
-    printf("[ec_tra_repair begin]\n");
+    printf("[ec_tra_repair begin]\n"); 
     int i; // loop control variables
 
     /* File arguments */
